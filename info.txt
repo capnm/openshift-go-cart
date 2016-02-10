@@ -1,0 +1,8 @@
+manual:
+https://developers.openshift.com/en/overview-what-is-openshift.html
+
+cartridge reflector:
+http://cartreflect-claytondev.rhcloud.com/github/xi2/openshift-go-cart
+
+raw manifest:
+https://raw.github.com/xi2/openshift-go-cart/master/metadata/manifest.yml
