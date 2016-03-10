@@ -5,4 +5,4 @@ cartridge reflector:
 http://cartreflect-claytondev.rhcloud.com/github/xi2/openshift-go-cart
 
 raw manifest:
-https://raw.github.com/xi2/openshift-go-cart/master/metadata/manifest.yml
+https://raw.github.com/capnm/openshift-go-cart/master/metadata/manifest.yml

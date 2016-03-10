@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>OpenShift Go Cartridge</title>
+	<meta charset="utf-8" />
+</head>
+<body>
+<h1 id="openshift-go-cartridge">OpenShift Go Cartridge</h1>
+<p>Runs <a href="http://golang.org">Go</a> on <a href="https://openshift.redhat.com/app/login">OpenShift</a> using downloadable cartridge support.</p>
+<p>Once the app is created, you'll have a &quot;.godir&quot; file in the root of your repo. The single line is to tell the cartridge what the package of your Go code is. A typical .godir file might contain:</p>
+<pre><code>capnm/goserv</code></pre>
+<p>which would tell OpenShift to place all of the files in the root of the Git repository inside of the <code>capnm/goserv</code> package prior to compilation.</p>
+<p>When you push code to the repo, the cart will compile your package into <code>$OPENSHIFT_REPO_DIR/bin/</code>, with the last segment of the .godir being the name of the executable. For the above .godir, your executable will be:</p>
+<pre><code>$OPENSHIFT_REPO_DIR/bin/goserv</code></pre>
+<p>If you want to serve web requests (vs. running in the background), you'll need to listen on the ip address and port that OpenShift allocates - those are available as HOST and PORT in the environment.</p>
+<p>This default &quot;web.go&quot; file is a simple &quot;hello, world&quot; web service.</p>
+<p>Any log output will be generated to <code>$OPENSHIFT_GO_LOG_DIR</code> on your OpenShift gear</p>
+<h2 id="build">Build</h2>
+<p>When you push code to your repo, a Git postreceive hook runs and invokes a compile script. This attempts to download the Go compiler environment for you into $OPENSHIFT_GO_DIR/cache. Once the environment is setup, the cart runs</p>
+<pre><code>go get -tags openshift ./...</code></pre>
+<p>on a working copy of your source. The main file that you run will have access to two environment variables, <span class="math"><em>H</em><em>O</em><em>S</em><em>T</em><em>a</em><em>n</em><em>d</em></span>PORT, which contain the internal address you must listen on to receive HTTP requests to your application.</p>
+</body>
+</html>
