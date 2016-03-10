@@ -3,7 +3,7 @@ Cartridge-Short-Name: GO
 Display-Name: Go 1.6
 Version: "1.6"
 Versions: ["1.6"]
-Website: https://github.com/smarterclayton/openshift-go-cart
+Website: https://github.com/capnm/openshift-go-cart
 Cartridge-Version: 0.0.2
 Cartridge-Vendor: capnm
 Categories:
