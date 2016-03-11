@@ -4,8 +4,8 @@
 	<title>OpenShift Go Cartridge</title>
 	<meta charset="utf-8" />
 </head>
-<body>
-<h1 id="openshift-go-cartridge">OpenShift Go Cartridge</h1>
+<body style="width:35em;">
+<h1>OpenShift Go Cartridge</h1>
 <p>Runs <a href="http://golang.org">Go</a> on <a href="https://openshift.redhat.com/app/login">OpenShift</a> using downloadable cartridge support.</p>
 <p>Once the app is created, you'll have a &quot;.godir&quot; file in the root of your repo. The single line is to tell the cartridge what the package of your Go code is. A typical .godir file might contain:</p>
 <pre><code>capnm/goserv</code></pre>
@@ -18,6 +18,7 @@
 <h2 id="build">Build</h2>
 <p>When you push code to your repo, a Git postreceive hook runs and invokes a compile script. This attempts to download the Go compiler environment for you into $OPENSHIFT_GO_DIR/cache. Once the environment is setup, the cart runs</p>
 <pre><code>go get -tags openshift ./...</code></pre>
-<p>on a working copy of your source. The main file that you run will have access to two environment variables, <span class="math"><em>H</em><em>O</em><em>S</em><em>T</em><em>a</em><em>n</em><em>d</em></span>PORT, which contain the internal address you must listen on to receive HTTP requests to your application.</p>
+<p>on a working copy of your source. The main file that you run will have access to two environment variables, 
+<code>HOST</code> and <code>PORT</code>, which contain the internal address you must listen on to receive HTTP requests to your application.</p>
 </body>
 </html>
