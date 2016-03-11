@@ -1,0 +1,32 @@
+OpenShift Go 1.6 Cartridge
+==========================
+
+What is ...
+
+	https://developers.openshift.com/en/overview-what-is-openshift.html
+	https://github.com/smarterclayton/openshift-go-cart
+
+Ubuntu: 
+	sudo gem install rhc
+
+.ssh/config
+Host *.rhcloud.com
+        IdentityFile ~/.ssh/rsa_openshift
+        KexAlgorithms diffie-hellman-group-exchange-sha256
+
+	rhc setup
+
+
+Install the app cartridge on openshift.redhat.com (turn on autoscaling):
+
+	rhc create-app <app> \
+	https://raw.github.com/capnm/openshift-go-cart/master/metadata/manifest.yml -s
+
+
+Checkout: 
+	rhc git-clone <app>
+
+
+Login:
+	rhc ssh <app>
+
