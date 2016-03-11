@@ -26,7 +26,32 @@ Install the app cartridge on openshift.redhat.com (turn on autoscaling):
 Checkout: 
 	rhc git-clone <app>
 
+Checkin:
+	git push
+
+remote: Syncing git content to other proxy gears
+remote: Building git ref 'master', commit xxxxxx
+remote: 
+remote: -----> Using Go 1.6
+remote: -----> Running: go get -tags openshift ./...
+remote: Preparing build for deployment
+remote: Deployment id is xxxxxxx
+remote: Activating deployment
+remote: HAProxy already running
+remote: CLIENT_RESULT: HAProxy instance is started
+remote: 
+remote: -------------------------
+remote: Git Post-Receive Result: success
+remote: Activation status: success
+remote: Deployment completed with status: success
+
 
 Login:
 	rhc ssh <app>
+	tail_all
+
+==> go/logs/go.log <==
+date: Starting application <app> from bin/goserv...
+
+
 
