@@ -36,12 +36,14 @@ remote: -----> Using Go 1.6
 remote: -----> Running: go get -tags openshift ./...
 remote: Preparing build for deployment
 remote: Deployment id is xxxxxxx
+remote: Distributing deployment to child gears
 remote: Activating deployment
 remote: HAProxy already running
 remote: CLIENT_RESULT: HAProxy instance is started
 remote: 
 remote: -------------------------
 remote: Git Post-Receive Result: success
+remote: Distribution status: success
 remote: Activation status: success
 remote: Deployment completed with status: success
 
